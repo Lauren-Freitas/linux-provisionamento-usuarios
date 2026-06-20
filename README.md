@@ -27,7 +27,7 @@ Testei na prática rodando o script numa VPS Ubuntu que eu tinha disponível.
 
 Confirmei que o sistema estava limpo, sem nenhum dos usuários/grupos/diretórios que o script ia criar:
 
-![Sistema antes](screenshots/01-antes.png)
+![Sistema antes](01-antes.png)
 
 ## Como rodar
 
@@ -44,7 +44,7 @@ Precisa rodar como root (ou com sudo) porque cria usuários do sistema.
 
 Testei se carlos (ADM), roberto (VEN) e josefina (SEC) conseguiam acessar normalmente o diretório do próprio departamento, e se conseguiam criar arquivo no /publico:
 
-![Acesso ao próprio diretório](screenshots/02-acesso-proprio.png)
+![Acesso ao próprio diretório](02-acesso-proprio.png)
 
 ### Isolamento entre departamentos
 
@@ -54,7 +54,7 @@ Essa foi a parte mais importante de testar - tentei acessar diretórios de outro
 su - roberto -c "ls /adm"
 ```
 
-![Testes de permission denied](screenshots/03-permission-denied.png)
+![Testes de permission denied](03-permission-denied.png)
 
 Todas as 6 combinações possíveis (ven tentando entrar em adm e sec, adm tentando entrar em ven e sec, sec tentando entrar em adm e ven) deram `Permission denied`, como esperado.
 
@@ -64,7 +64,7 @@ Tudo isso eu fiz direto pelo terminal da VPS via SSH, sem interface gráfica nen
 
 Pra autenticar pelo terminal, o git não aceita mais senha normal - precisei gerar um Personal Access Token nas configurações da conta (Settings > Developer settings > Personal access tokens) e usar ele no lugar da senha na hora do push. Na primeira tentativa deu erro 403 porque o token não tinha a permissão certa marcada.
 
-![Processo completo no terminal](screenshots/04-git-processo.png)
+![Processo completo no terminal](04-git-processo.png)
 
 Esse README também foi escrito direto no terminal com nano, sem sair da VPS em momento nenhum.
 
